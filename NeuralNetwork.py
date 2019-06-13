@@ -170,7 +170,7 @@ class NeuralNet:
                 self.adjust_net(self.backprop().scale_net(learn_rate))
             # average over the number of batches
             avg_cost /= (10000/batch_size)
-            print(avg_cost, "\tepoch", k+1)
+            print('%.5f'%avg_cost, "\tepoch", k+1)
 
     # Tests the network on all test_imgs.
     # prints the confusion matrix, the average least-squares cost, and the accuracy.
