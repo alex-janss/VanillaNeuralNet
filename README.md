@@ -1,5 +1,5 @@
 # VanillaNeuralNet
-This is a python3 implementation of the vanilla neural network algorithm, used to classify the handwritten digits from the MNIST database. As my first python machine learning project, my goal was to understand the neural network and backpropagation algorithms in order to create a neural network in python from scratch, using only numpy.
+This is a simple python 3 implementation of the vanilla neural network algorithm, used to classify the handwritten digits from the MNIST database. As my first python machine learning project, my goal was to understand the neural network and backpropagation algorithms in order to create a neural network in python from scratch, using only numpy.
 
 ### Prerequisites
 
