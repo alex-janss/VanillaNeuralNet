@@ -72,10 +72,10 @@ class NeuralNet:
         for i in range(len(self.params) - 1):
             self.weights.append(np.zeros((self.params[i + 1], self.params[i])))
             self.biases.append(np.zeros((self.params[i + 1])))
+            self.weighted_inputs.append(np.zeros((self.params[i+1], batch_size)))
         for i in range(len(self.params)):
             self.neurons.append(np.zeros((self.params[i], batch_size)))
-            self.weighted_inputs.append(np.zeros((self.params[i], batch_size)))
-            self.errors = np.zeros((self.params[-1], batch_size))
+        self.errors = np.zeros((self.params[-1], batch_size))
 
     # randomly initializes all weights and biases normally with variance 1
     def random_init(self):
@@ -113,8 +113,8 @@ class NeuralNet:
             input_labels.shape = (1, self.params[-1])
         self.neurons[0] = input_imgs.T
         for i in range(len(self.params) - 1):
-            self.weighted_inputs[i + 1] = (self.weights[i] @ self.neurons[i]) + np.outer(self.biases[i], np.ones((self.neurons[0].shape[1])))
-            self.neurons[i+1] = sigmoid(self.weighted_inputs[i + 1])
+            self.weighted_inputs[i] = (self.weights[i] @ self.neurons[i]) + np.outer(self.biases[i], np.ones((self.neurons[0].shape[1])))
+            self.neurons[i+1] = sigmoid(self.weighted_inputs[i])
         self.errors = self.neurons[-1] - input_labels.T
 
 
