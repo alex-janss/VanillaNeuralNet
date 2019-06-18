@@ -7,7 +7,8 @@ np.set_printoptions(linewidth=300)
 image_size = 28  # width and length
 no_of_different_labels = 10  # i.e. 0, 1, 2, 3, ..., 9
 image_pixels = image_size * image_size
-data_path = "C:/Users/Alex/PycharmProjects/ExperimentBox/"
+# Edit data path to your own directory if needed
+data_path = ""
 # Saves train and test data to pickle file
 # Makes loading faster for future runs
 try:
